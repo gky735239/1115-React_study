@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Add from '../add/add'
 import List from '../list/list'
-class App extends Component{
+export default class App extends Component{
     constructor(props){
         super(props);
         this.state = {

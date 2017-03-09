@@ -6,7 +6,7 @@ export default class List extends Component {
         this.remove = this.remove.bind(this);
     }
 
-    remove(){
+    removeComment(){
         let { comment, remove, index} = this.props;
         if(confirm(`你确定要删除${comment.username}?`)){
             remove(index);
@@ -14,13 +14,15 @@ export default class List extends Component {
     }
 
     render(){
+        const {comment} = this.props;
         return(
             <li className="list-group-item">
                 <div className="handle">
-                    <a href="javascript:;" onClick={this.remove}>删除</a>
+                    //eslint-disable-next-line
+                    <a href="javascript:;" onClick={this.removeComment}>删除</a>
                 </div>
-                <p className="user"><span >xxx</span><span>说:</span></p>
-                <p className="centence">React不错!</p>
+                <p className="user"><span >{comment.username}</span><span>说:</span></p>
+                <p className="centence">{comment.content}</p>
             </li>
         );
     }

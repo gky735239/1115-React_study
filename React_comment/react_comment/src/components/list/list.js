@@ -4,11 +4,6 @@ import Item from '../item/item'
 import './list.css'
 
 export default class List extends Component{
-    constructor(props){
-        super(props);
-    }
-
-
     render(){
         let comments = this.props.comments;
         let display = comments.length === 0 ? 'block' : 'none';
